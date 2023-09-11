@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import Reservations from '../components/Reservations/Reservations';
+import Form from '../components/Form/Form';
 import { useState, useEffect } from 'react'
 
 function App() {
@@ -19,11 +20,15 @@ function App() {
     getResies()
   },[])
 
+  const addResie = (newResie) => {
+    setResies([...resies, newResie])
+  }
+
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
       <div className='resy-form'>
-        <h2>Form Container</h2>
+        <Form addResie={addResie} />
       </div>
       <div className='resy-container'>
           <Reservations resies={resies} />
