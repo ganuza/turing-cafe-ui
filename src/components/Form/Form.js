@@ -1,11 +1,31 @@
 import { useState } from 'react'
 import './Form.css'
 
-const Form = () => {
+const Form = ({addResie}) => {
   const [name, setName] = useState('')
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
   const [number, setNumber] = useState('')
+
+const enterResies = (event) => {
+  event.preventDefault()
+  const newResie = {
+    id: Date.now(),
+    name,
+    date,
+    time,
+    number
+  }
+  addResie(newResie)
+  clearInput()
+}
+
+const clearInput = () => {
+  setName('')
+  setDate('')
+  setTime('')
+  setNumber('')
+}
 
     return(
       <form>
@@ -41,7 +61,7 @@ const Form = () => {
           onChange={event => setNumber(event.target.value)}
         />
 
-        <button>Make Reservation</button>
+        <button onClick = { event => enterResies(event)}>Make Reservation</button>
       </form>
     )
 }
