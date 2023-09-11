@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-
+import Reservations from '../components/Reservations/Reservations';
 import { useState, useEffect } from 'react'
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
         <h2>Form Container</h2>
       </div>
       <div className='resy-container'>
-        <h2>Resie Card Container</h2>
+        <Reservations resies={resies} />
       </div>
     </div>
   );
