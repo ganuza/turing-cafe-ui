@@ -4,7 +4,6 @@ import './Reservations.css'
 const Reservations = ({resies}) => {
   const resieCards = resies.map(resie => {
     return(
-
       <ReservationCard
         key={resie.id}
         id={resie.id}

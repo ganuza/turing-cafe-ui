@@ -26,7 +26,7 @@ function App() {
         <h2>Form Container</h2>
       </div>
       <div className='resy-container'>
-        <Reservations resies={resies} />
+          <Reservations resies={resies} />
       </div>
     </div>
   );

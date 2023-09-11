@@ -1,9 +1,12 @@
 import './ReservationCard.css'
 
-const ReservationCard = () => {
+const ReservationCard = ({ id, name, date, time, number }) => {
   return(
     <div className='resie-card'>
-      <h3>Card!</h3>
+      <h3>{name}</h3>
+      <p>{date}</p>
+      <p>{time} pm</p>
+      <p>Number of Guests: {number}</p>
     </div>
   )
 }
